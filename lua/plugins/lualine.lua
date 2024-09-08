@@ -4,7 +4,7 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'nordic',
+        theme = 'nord',
         icons_enabled = true,
       },
       sections = {
