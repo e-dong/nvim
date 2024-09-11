@@ -9,6 +9,10 @@ vim.opt.autoindent = true
 
 vim.opt.wrap = false
 
+-- scrolloff
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
+
 -- configure left column
 vim.opt.number = true
 vim.wo.relativenumber = true
@@ -24,6 +28,9 @@ vim.opt.backspace = "indent,eol,start"
 -- split windows
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+vim.opt.conceallevel = 0 -- show concealed in markdown files
+vim.opt.fileencoding = "utf-8"
 
 -- misc
 vim.opt.showcmd = true
