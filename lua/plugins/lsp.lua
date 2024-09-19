@@ -19,7 +19,7 @@ return {
 		config = function()
 			-- ensure the java debug adapter is installed
 			require("mason-nvim-dap").setup({
-				ensure_installed = { "java-debug-adapter", "java-test" },
+				ensure_installed = { "javadbg", "javatest" },
 			})
 		end,
 	},
@@ -42,6 +42,11 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+
+      -- setup the python language server
+      lspconfig.pyright.setup({
+        capabilities = capabilities
+      })
 
 			-- Set vim motion for <Space> + c + h to show code documentation about the code the cursor is currently over if available
 			vim.keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
