@@ -1,29 +1,31 @@
 return {
+  {
+    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    config = function()
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          -- LSP
+          "lua-language-server",
+          "pyright",
+          "jdtls",
+          -- Debug and Test Utils
+          "java-debug-adapter",
+          "java-test",
+          -- linter and formatters
+         "stylua",
+         "prettier",
+         "google-java-format",
+         "black"
+        }
+      })
+    end
+  },
 	{
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
 		end,
 	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "jdtls" },
-			})
-		end,
-	},
-	-- mason nvim dap utilizes mason to automatically ensure debug adapters you want installed are installed, mason-lspconfig will not automatically install debug adapters for us
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		config = function()
-			-- ensure the java debug adapter is installed
-			require("mason-nvim-dap").setup({
-				ensure_installed = { "javadbg", "javatest" },
-			})
-		end,
-	},
-	-- utility plugin for configuring the java language server for us
 	{
 		"mfussenegger/nvim-jdtls",
 		dependencies = {
