@@ -8,3 +8,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt.signcolumn = "no"
 	end,
 })
+
+-- TODO: Add auto command to delete terminal buffer on nvim quit/exit
