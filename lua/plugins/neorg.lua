@@ -21,6 +21,8 @@ return {
 		})
 		vim.wo.foldlevel = 99
 		vim.wo.conceallevel = 2
+
+    vim.keymap.set("n", "<leader>nc", "<Cmd>Neorg toggle-concealer<CR>", { desc = "[N]eorg toggle concealer"})
 	end,
 
 	dependencies = {
