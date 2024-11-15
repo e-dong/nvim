@@ -5,6 +5,7 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           -- LSP
+          "bash-language-server",
           "lua-language-server",
           "pyright",
           "ruff-lsp",
@@ -41,6 +42,11 @@ return {
 			local lspconfig = require("lspconfig")
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- setup bash language server
+      lspconfig.bashls.setup({
+        capabilities = capabilities,
+      })
 
 			-- setup the lua language server
 			lspconfig.lua_ls.setup({
